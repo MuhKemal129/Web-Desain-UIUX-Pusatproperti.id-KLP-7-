@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Agen - Pusatproperti.id</title>
+    
+    <!-- Link Font & Icon yang sudah diperbaiki -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <!-- Header dengan Tombol Kembali -->
+        <div class="header-login">
+            <a href="HomePage.html" class="back-btn" title="Kembali">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <h1 class="title">Daftar Akun Agen</h1>
+        </div>
+
+        <div class="logo-container">
+            <img src="logo.png" alt="Pusatproperti.id">
+        </div>
+
+        <div class="tab-menu">
+            <a href="Register_member.html" class="tab-item active">Member Umum</a>
+            <a href="Register_agen.html" class="tab-item inactive">Agen Pusatproperti.id</a>
+        </div>
+
+        <form onsubmit="event.preventDefault(); window.location.href='HomePage.html';">
+            <div class="input-group">
+                <label>Nama Lengkap Agen</label>
+                <div class="inner-input">
+                    <i class="fa-regular fa-id-badge icon-field"></i>
+                    <input type="text" name="nama_agen" placeholder="Nama sesuai KTP" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Nomor WhatsApp</label>
+                <div class="inner-input">
+                    <i class="fa-brands fa-whatsapp icon-field"></i>
+                    <input type="tel" name="whatsapp" placeholder="Contoh: 08123456789" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Nama Kantor / Agency</label>
+                <div class="inner-input">
+                    <i class="fa-solid fa-building icon-field"></i>
+                    <input type="text" name="agency" placeholder="Nama perusahaan (Opsional)">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <div class="inner-input">
+                    <i class="fas fa-lock icon-field"></i>
+                    <input type="password" name="pass" placeholder="Buat password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login">Daftar Sebagai Agen</button>
+        </form>
+
+        <div class="social-section">
+            <div class="divider">
+                <span>Atau daftar dengan</span>
+            </div>
+
+            <div class="social-icons-row">
+                <button type="button" class="btn-social-icon">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                </button>
+                <button type="button" class="btn-social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                </button>
+            </div>
+
+
+            <p class="footer-text">
+                Sudah bergabung? <a href="login_agen.html">Login Agen</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

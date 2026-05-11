@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Properti - PusatProperti.id</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="nav-icon" onclick="openNav()"><i class="fas fa-bars"></i></button>
+        <div class="logo">Pusatproperti.id</div>
+        <button class="nav-icon" onclick="window.location.href='Login_member.html'">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </nav>
+
+    <div id="navOverlay" class="nav-overlay" onclick="closeNav()"></div>
+    <div id="sideNav" class="side-nav">
+        <button class="close-nav-btn" onclick="closeNav()"><i class="fas fa-times"></i></button>
+        <div class="nav-links">
+            <a href="HomePage.html">Beranda</a>
+            <a href="berandajual.html">Properti Dijual</a>
+            <a href="berandasewa.html">Properti Disewa</a>
+            <a href="Proyekbaru.html">Proyek Baru</a>
+            <a href="KPR.html">KPR</a>
+            <a href="CariAgen.html">Cari Agen</a>
+            <a href="Testimoni.html">Testimoni</a>
+            <hr class="nav-divider">
+            <a href="#">Tentang Pusatproperti</a>
+            <a href="#">Join Pusatproperti</a>
+            <a href="#">Prestasi</a>
+            <a href="#">Artikel</a>
+            <a href="#">Kontak</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="search-section">
+            <div class="search-widget">
+                
+                <div class="search-input-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Lokasi, kata kunci area proyek, pengembang">
+                </div>
+
+                <div class="search-tabs">
+                    <button class="tab-btn" onclick="window.location.href='Beranda.html'">Dijual</button>
+                    <button class="tab-btn active" onclick="window.location.href='berandasewa.html'">Disewa</button>
+                </div>
+
+                <div class="filter-row">
+                    <div class="dropdown">
+                        <button class="filter-btn" onclick="toggleDropdown('tipeDropdown')">
+                            Pilih Tipe <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="tipeDropdown">
+                            <a href="#">Semua Tipe</a>
+                            <a href="#">Rumah</a>
+                            <a href="#">Apartemen</a>
+                            <a href="#">Ruko</a>
+                            <a href="#">Villa</a>
+                            <a href="#">Tanah</a>
+                            <a href="#">Rumah Kost</a>
+                            <a href="#">Toko</a>
+                            <a href="#">Gudang</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="filter-btn" onclick="toggleDropdown('hargaDropdown')">
+                            Harga <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="hargaDropdown">
+                            <a href="#">Semua Harga</a>
+                            <a href="#">Di bawah Rp 30 Juta / thn</a>
+                            <a href="#">Rp 30 Juta - Rp 70 Juta / thn</a>
+                            <a href="#">Di atas Rp 70 Juta / thn</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="filter-btn" onclick="openModal()">
+                            Filter <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="filter-btn icon-only" onclick="toggleDropdown('sortDropdown')">
+                            <i class="fas fa-arrows-up-down"></i>
+                        </button>
+                        <div class="dropdown-content dropdown-right" id="sortDropdown">
+                            <a href="#">Terpopuler</a>
+                            <a href="#">Terbaru</a>
+                            <a href="#">Sewa Terendah</a>
+                            <a href="#">Sewa Tertinggi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="properties-section container">
+            <div class="tagline-container">
+                <h2 class="tagline-main">Sewa Properti Idaman Anda Sekarang.</h2>
+                <p class="tagline-sub">Pilihan Terlengkap Hanya di <strong>PusatProperti.id</strong></p>
+            </div>
+
+            <div class="section-header">
+                <div>
+                    <h2>Properti Disewakan</h2>
+                    <p>Rekomendasi sewa properti pilihan untuk Anda</p>
+                </div>
+                <a href="#" class="view-all desktop-only">Lihat Semua</a>
+            </div>
+
+            <div class="property-grid">
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Apartemen</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 4,5 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Apartemen Cozy 1BR Full Furnished</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Pusat Kota Makassar</p>
+                        <div class="specs"><span>LB: 45 m²</span><span>KT: 1</span><span>KM: 1</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">21 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80" alt="Rumah Cluster Minimalis">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Rumah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 35 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Cluster Minimalis Modern Tipe 45</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Gowa, Sulawesi Selatan</p>
+                        <div class="specs"><span>LT: 90 m²</span><span>LB: 45 m²</span><span>KT: 2</span><span>KM: 1</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">20 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Villa Tropis Modern">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Villa</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 15 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Villa Tropis Modern dengan Kolam Renang</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Malino, Gowa</p>
+                        <div class="specs"><span>LT: 300 m²</span><span>LB: 150 m²</span><span>KT: 3</span><span>KM: 3</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">18 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Townhouse Eksklusif">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Rumah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 65 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Townhouse Eksklusif 2 Lantai Strategis</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Panakkukang, Makassar</p>
+                        <div class="specs"><span>LT: 120 m²</span><span>LB: 180 m²</span><span>KT: 3</span><span>KM: 3</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">15 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Rumah Sederhana">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Rumah</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 20 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Keluarga Siap Huni Akses Mudah</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Tamalanrea, Makassar</p>
+                        <div class="specs"><span>LT: 80 m²</span><span>LB: 60 m²</span><span>KT: 2</span><span>KM: 1</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">10 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Apartemen Studio Interior">
+                        <div class="badges">
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Apartemen</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 3,5 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Apartemen Studio Compact Estetik Full Furnished</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Rappocini, Makassar</p>
+                        <div class="specs"><span>LB: 30 m²</span><span>KT: 1</span><span>KM: 1</span></div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
+                                <div><p class="agent-name">Admin PusatProperti</p><p class="date">05 Feb 2026</p></div>
+                            </div>
+                            <a href="https://wa.me/" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="btn-outline mobile-only-block mt-4">Lihat Semua Properti Disewakan</button>
+        </section>
+    </main>
+
+    <div id="filterModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Filter</h2>
+                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <label>Transaksi</label>
+                    <select><option selected>Dijual</option><option>Disewa</option><option>Dijual/Disewa</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Tipe</label>
+                    <select><option>Pilih Tipe</option><option>Rumah</option><option>Apartemen</option><option>Villa</option><option>Tanah</option><option>Rumah Kost<option>Toko</option><option>Gudang</select>
+                </div>
+                <div class="form-row">
+                    <label>Sertifikat</label>
+                    <select><option>Pilih Sertifikat</option><option>SHM</option><option>HGB</option><option>Lain-lain</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Provinsi</label>
+                    <select><option>Pilih Provinsi</option><option>Sulawesi Selatan</option><option>Sulawesi Barat</option><option>Sulawesi Tengah</option><option>Sulawesi Utara</option><option>Sulawesi Tenggara</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kota</label>
+                    <select><option>Pilih Kota</option><option>Makassar</option><option>Gowa</option><option>Maros</option><option>Bulukumba</option><option>Enrekang</option><option>Jeneponto</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Lokasi</label>
+                    <select><option>Pilih Lokasi</option><option>Tamalanrea</option><option>Panakkukang</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kamar Tidur</label>
+                    <select><option>Pilih Kamar tidur</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kamar Mandi</label>
+                    <select><option>Pilih Kamar Mandi</option><option>1+</option><option>2+</option><option>3+</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Luas Tanah (m<sup>2</sup>)</label>
+                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
+                </div>
+                <div class="form-row">
+                    <label>Luas Bangunan (m<sup>2</sup>)</label>
+                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-batal" onclick="closeModal()">Batal</button>
+                <button class="btn-cari" onclick="closeModal()">Cari</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JS Dropdown Filter
+        function toggleDropdown(id) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.id !== id && openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+            document.getElementById(id).classList.toggle("show");
+        }
+
+        // JS Modal Fullscreen
+        function openModal() {
+            document.getElementById('filterModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('filterModal').classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // JS Sidebar Menu
+        function openNav() {
+            document.getElementById("sideNav").classList.add("active");
+            document.getElementById("navOverlay").classList.add("active");
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").classList.remove("active");
+            document.getElementById("navOverlay").classList.remove("active");
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            if (!event.target.closest('.filter-btn') && !event.target.closest('.dropdown-content')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            var modal = document.getElementById('filterModal');
+            if (event.target == modal) { closeModal(); }
+        }
+    </script>
+</body>
+</html>

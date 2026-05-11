@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator KPR - PusatProperti.id</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="beranda.css"> <link rel="stylesheet" href="KPR.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="nav-icon" onclick="openNav()"><i class="fas fa-bars"></i></button>
+        <div class="logo">Pusatproperti.id</div>
+        <button class="nav-icon" onclick="window.location.href='Login_member.html'">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </nav>
+
+    <div id="navOverlay" class="nav-overlay" onclick="closeNav()"></div>
+    <div id="sideNav" class="side-nav">
+        <button class="close-nav-btn" onclick="closeNav()"><i class="fas fa-times"></i></button>
+        <div class="nav-links">
+             <a href="HomePage.html">Beranda</a>
+            <a href="berandajual.html">Properti Dijual</a>
+            <a href="berandasewa.html">Properti Disewa</a>
+            <a href="Proyekbaru.html">Proyek Baru</a>
+            <a href="KPR.html">KPR</a>
+            <a href="CariAgen.html">Cari Agen</a>
+            <a href="Testimoni.html">Testimoni</a>
+            <hr class="nav-divider">
+            <a href="#">Tentang Pusatproperti</a>
+            <a href="#">Join Pusatproperti</a>
+            <a href="#">Prestasi</a>
+            <a href="#">Artikel</a>
+            <a href="#">Kontak</a>
+        </div>
+    </div>
+
+    <main class="kpr-page-container">
+        <div class="kpr-master-card">
+            
+            <div class="kpr-input-section">
+                <div class="header-content">
+                    <h2 class="title-main">Simulasi Pinjaman</h2>
+                    <p class="subtitle">Hitung estimasi cicilan bulanan Anda secara cepat dan akurat.</p>
+                </div>
+                
+                <div class="form-wrapper">
+                    <div class="input-item">
+                        <label><i class="fas fa-tag"></i> Harga Properti (Rp)</label>
+                        <input type="text" id="hargaProperti" class="kpr-input" onkeyup="formatInput(this); updatePinjaman();" placeholder="Contoh: 1.000.000.000">
+                    </div>
+
+                    <div class="input-item">
+                        <label><i class="fas fa-hand-holding-dollar"></i> Uang Muka / DP (Rp)</label>
+                        <input type="text" id="uangMuka" class="kpr-input" onkeyup="formatInput(this); updatePinjaman();" placeholder="Contoh: 200.000.000">
+                    </div>
+
+                    <div class="input-item">
+                        <label><i class="fas fa-file-invoice-dollar"></i> Jumlah Pinjaman (Rp)</label>
+                        <input type="text" id="jumlahPinjaman" class="kpr-input input-readonly" readonly placeholder="Otomatis terhitung">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-item">
+                            <label><i class="fas fa-calendar-alt"></i> Tenor (Thn)</label>
+                            <input type="number" id="jangkaWaktu" class="kpr-input" placeholder="15">
+                        </div>
+                        <div class="input-item">
+                            <label><i class="fas fa-percent"></i> Bunga (%)</label>
+                            <input type="number" id="sukuBunga" class="kpr-input" step="0.1" placeholder="5.5">
+                        </div>
+                    </div>
+
+                    <button class="btn-primary-kpr" onclick="hitungKPR()">
+                        <span>Hitung Sekarang</span>
+                        <i class="fas fa-calculator"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="kpr-result-section">
+                <div class="result-bg-overlay">
+                    <div class="result-inner">
+                        <h3 class="res-title">Hasil Estimasi</h3>
+                        
+                        <div class="glass-result-card">
+                            <div class="res-block">
+                                <span class="res-label">Total Pinjaman Pokok</span>
+                                <div id="resPinjaman" class="res-amount">-</div>
+                            </div>
+                            
+                            <div class="res-line"></div>
+                            
+                            <div class="res-block">
+                                <span class="res-label">Angsuran Per Bulan</span>
+                                <div id="resCicilan" class="res-amount-main">-</div>
+                            </div>
+                        </div>
+
+                        <p class="res-disclaimer">
+                            *Hasil perhitungan ini merupakan estimasi awal berdasarkan sistem bunga anuitas efektif bank.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function formatInput(input) {
+            let value = input.value.replace(/[^,\d]/g, '').toString();
+            let split = value.split(',');
+            let sisa = split[0].length % 3;
+            let rupiah = split[0].substr(0, sisa);
+            let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+            if (ribuan) {
+                let separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            input.value = rupiah;
+        }
+
+        function cleanNumber(str) {
+            return parseFloat(str.replace(/\./g, '')) || 0;
+        }
+
+        function updatePinjaman() {
+            const harga = cleanNumber(document.getElementById('hargaProperti').value);
+            const dp = cleanNumber(document.getElementById('uangMuka').value);
+            const pinjaman = harga - dp;
+            document.getElementById('jumlahPinjaman').value = pinjaman > 0 ? pinjaman.toLocaleString('id-ID') : 0;
+        }
+
+        function hitungKPR() {
+            const pinjaman = cleanNumber(document.getElementById('jumlahPinjaman').value);
+            const bungaTahunan = parseFloat(document.getElementById('sukuBunga').value);
+            const tenorTahun = parseInt(document.getElementById('jangkaWaktu').value);
+
+            if (!pinjaman || !bungaTahunan || !tenorTahun) {
+                alert("Harap lengkapi semua data simulasi!");
+                return;
+            }
+
+            const bungaBulanan = (bungaTahunan / 100) / 12;
+            const totalBulan = tenorTahun * 12;
+            const x = Math.pow(1 + bungaBulanan, totalBulan);
+            const cicilan = (pinjaman * x * bungaBulanan) / (x - 1);
+
+            document.getElementById('resPinjaman').innerText = "Rp " + pinjaman.toLocaleString('id-ID');
+            document.getElementById('resCicilan').innerText = "Rp " + Math.round(cicilan).toLocaleString('id-ID');
+            
+            if(window.innerWidth < 900) {
+                document.querySelector('.kpr-result-section').scrollIntoView({behavior: 'smooth'});
+            }
+        }
+
+        function openNav() { document.getElementById("sideNav").classList.add("active"); document.getElementById("navOverlay").classList.add("active"); }
+        function closeNav() { document.getElementById("sideNav").classList.remove("active"); document.getElementById("navOverlay").classList.remove("active"); }
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+:root {
+    --navy: #1a2d55;        
+    --blue-accent: #2b4c7e; 
+    --text-gray: #5c7294;   
+    --light-bg: #f8fbff;    
+    --white: #ffffff;       
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--light-bg);
+    color: var(--navy);
+    line-height: 1.6; 
+}
+/* Mengunci scroll pada body saat sidebar terbuka */
+body.no-scroll {
+    overflow: hidden;
+}
+/* ================================================================
+   1. HEADER
+   ================================================================ */
+header {
+    position: absolute; 
+    top: 0;
+    width: 100%;
+    padding: 25px 5%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10; 
+    color: var(--white);
+}
+
+header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+header i.fa-bars {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user-icon a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ================================================================
+   2. SIDEBAR NAVIGATION (OFF-CANVAS) - STYLE TERBARU
+   ================================================================ */
+.nav-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden;
+    transition: 0.3s ease-in-out; z-index: 999;
+}
+.nav-overlay.active { opacity: 1; visibility: visible; }
+
+.side-nav {
+    position: fixed; top: 0; left: -320px; width: 320px; height: 100vh;
+    background-color: #3b5b78; /* Warna biru pudar persis seperti gambar */
+    color: var(--white); 
+    transition: 0.3s ease-in-out; z-index: 1000;
+    padding-top: 30px; /* Hanya padding atas untuk tombol X */
+    padding-bottom: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.side-nav.active { left: 0; }
+
+/* Custom Scrollbar Khusus untuk Sidebar */
+.side-nav::-webkit-scrollbar { width: 10px; }
+.side-nav::-webkit-scrollbar-track { background: transparent; }
+.side-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); border-radius: 10px; 
+}
+.side-nav::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
+
+/* Tombol X */
+.close-nav-btn {
+    background: transparent; border: none; width: 100%;
+    text-align: right; font-size: 24px; margin-bottom: 20px;
+    padding-right: 30px; /* Sesuaikan sejajar dengan teks menu */
+    cursor: pointer; color: var(--white); font-weight: bold;
+}
+.close-nav-btn:hover { opacity: 0.8; }
+
+/* List Menu */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.nav-links a {
+    color: var(--white); text-decoration: none; font-size: 16px;
+    font-weight: 500; display: block; letter-spacing: 0.3px;
+    padding: 15px 30px; /* Padding dipindah ke a supaya background hover bisa full */
+    transition: background-color 0.2s ease;
+}
+
+/* Efek blok memanjang pada menu yang di-hover atau aktif (Properti Dijual) */
+.nav-links a:hover, 
+.nav-links a.active { 
+    background-color: rgba(0, 0, 0, 0.15); /* Blok warna gelap transparan */
+}
+
+/* Garis Pembatas (Divider) */
+.nav-divider { 
+    border: 0; 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    margin: 15px 30px; /* Garisnya tetap sejajar dengan teks, tidak full */
+}
+/* ================================================================
+   3. HERO SECTION
+   ================================================================ */
+.hero {
+    height: 90vh; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1000') center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9; 
+    margin-bottom: 40px;
+}
+
+.search-container {
+    background: rgba(26, 45, 85, 0.85); 
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 800px;
+}
+
+.search-tabs {
+    display: flex; gap: 20px; margin-bottom: 15px; justify-content: center;
+}
+
+.tab {
+    color: var(--white); text-decoration: none; font-size: 14px;
+    font-weight: 500; padding-bottom: 5px;
+    border-bottom: 2px solid transparent; transition: 0.3s; 
+}
+
+.tab.active { border-bottom: 2px solid var(--white); }
+
+.search-box {
+    background: var(--white); display: flex; align-items: center;
+    padding: 5px 15px; border-radius: 8px;
+}
+
+.search-box input {
+    flex: 1; border: none; padding: 12px; outline: none; font-size: 14px;
+}
+
+.search-box i { color: var(--navy); font-size: 18px; }
+
+/* ================================================================
+   4. SECTIONS
+   ================================================================ */
+.section { padding: 80px 5%; text-align: center; }
+.section-subtitle { color: var(--text-gray); margin-bottom: 50px; font-size: 16px; }
+.section-mengapa { padding-top: 20px; margin-top: 10px; }
+.section-properti { padding-top: 80px; }
+
+/* ================================================================
+   5. PROPERTY CARDS
+   ================================================================ */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-img { position: relative; height: 220px; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.badge-container {
+    position: absolute; top: 15px; left: 15px;
+    display: flex; gap: 8px; z-index: 2;
+}
+
+.badge {
+    padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+}
+.badge-jual { background: #10b981; color: var(--white); }
+.badge-tipe { background: var(--white); color: #333; }
+
+.card-body { padding: 20px; }
+
+.card-price {
+    color: var(--navy); font-size: 22px; font-weight: 700; margin-bottom: 5px;
+}
+
+.card-title {
+    font-size: 16px; font-weight: 600; color: #333;
+    margin: 8px 0; line-height: 1.4;
+}
+
+.card-location {
+    font-size: 14px; color: var(--text-gray); margin-bottom: 15px;
+    display: flex; align-items: center; gap: 5px;
+}
+
+.card-specs {
+    display: flex; gap: 15px; padding: 10px 15px;
+    background: #f8fafc; border-radius: 8px; font-size: 13px;
+    font-weight: 500; color: #333; margin-bottom: 20px; flex-wrap: wrap;
+}
+
+.card-divider { border: 0; border-top: 1px dashed #cbd5e1; margin-bottom: 15px; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; }
+
+.agent-info { display: flex; align-items: center; gap: 10px; }
+
+.agent-avatar {
+    width: 38px; height: 38px; background: var(--blue-accent); color: var(--white);
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    font-weight: 600; font-size: 14px;
+}
+
+.agent-details .agent-name { font-size: 13px; font-weight: 600; color: #333; }
+.agent-details .agent-date { font-size: 11px; color: var(--text-gray); }
+
+.btn-whatsapp {
+    background: #25D366; color: var(--white); border: none; padding: 8px 14px;
+    border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.btn-whatsapp:hover { background: #20bd5a; }
+
+/* ================================================================
+   6. FEATURES SECTION
+   ================================================================ */
+.features {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; background: transparent; padding: 20px 0;
+}
+
+.feature-card {
+    background: #ffffff; padding: 30px 20px; border-radius: 20px;
+    border: 1px solid #eef2f7; box-shadow: 0 4px 15px rgba(26, 45, 85, 0.05);
+    transition: all 0.3s ease; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; min-height: 250px; text-align: center;
+}
+
+.feature-card i { font-size: 35px; color: var(--navy); margin-bottom: 15px; }
+.feature-card h4 { margin: 15px 0 10px 0; }
+.feature-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+/* ================================================================
+   8. RESPONSIVE ADJUSTMENTS
+   ================================================================ */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .features { padding: 30px; }
+    .search-container { padding: 15px; width: 90%; }
+}

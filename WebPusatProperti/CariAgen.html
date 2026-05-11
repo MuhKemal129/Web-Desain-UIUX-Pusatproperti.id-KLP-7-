@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Agen Sulawesi - PusatProperti.id</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="beranda.css">
+    <link rel="stylesheet" href="cariagen.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="nav-icon" onclick="openNav()"><i class="fas fa-bars"></i></button>
+        <div class="logo">Pusatproperti.id</div>
+        <button class="nav-icon" onclick="window.location.href='Login_member.html'">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </nav>
+
+    <div id="navOverlay" class="nav-overlay" onclick="closeNav()"></div>
+    <div id="sideNav" class="side-nav">
+        <button class="close-nav-btn" onclick="closeNav()"><i class="fas fa-times"></i></button>
+        <div class="nav-links">
+               <a href="HomePage.html">Beranda</a>
+            <a href="berandajual.html">Properti Dijual</a>
+            <a href="berandasewa.html">Properti Disewa</a>
+            <a href="Proyekbaru.html">Proyek Baru</a>
+            <a href="KPR.html">KPR</a>
+            <a href="CariAgen.html">Cari Agen</a>
+            <a href="Testimoni.html">Testimoni</a>
+            <hr class="nav-divider">
+            <a href="#">Tentang Pusatproperti</a>
+            <a href="#">Join Pusatproperti</a>
+            <a href="#">Prestasi</a>
+            <a href="#">Artikel</a>
+            <a href="#">Kontak</a>
+        </div>
+    </div>
+
+    <main class="agen-page-wrapper">
+        <header class="agen-hero-banner">
+            <div class="hero-overlay">
+                <div class="search-container container">
+                    <h1>Temukan Agen Profesional</h1>
+                    <p>Pilih agen terbaik di wilayah Sulawesi untuk properti impian Anda</p>
+                    <div class="search-box-group">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="inputCari" onkeyup="filterCari()" placeholder="Cari nama agen...">
+                        </div>
+                        <button class="btn-search-action">Cari Agen</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="city-selection container">
+            <h2 class="section-title">Provinsi di Sulawesi</h2>
+            <div class="city-scroll-wrapper">
+                <div class="city-item">
+                    <img src="https://images.pexels.com/photos/1437618/pexels-photo-1437618.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sulsel">
+                    <div class="city-overlay"><span>Sulawesi Selatan</span></div>
+                </div>
+                <div class="city-item">
+                    <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sultra">
+                    <div class="city-overlay"><span>Sulawesi Tenggara</span></div>
+                </div>
+                <div class="city-item">
+                    <img src="https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sulut">
+                    <div class="city-overlay"><span>Sulawesi Utara</span></div>
+                </div>
+                <div class="city-item">
+                    <img src="https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sulteng">
+                    <div class="city-overlay"><span>Sulawesi Tengah</span></div>
+                </div>
+                <div class="city-item">
+                    <img src="https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sulbar">
+                    <div class="city-overlay"><span>Sulawesi Barat</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="agen-listing container">
+            <div class="listing-header">
+                <div class="tabs">
+                    <button class="tab-item active" onclick="filterTab('all', this)">Semua</button>
+                    <button class="tab-item" onclick="filterTab('top', this)">Top Performer</button>
+                    <button class="tab-item" onclick="filterTab('verified', this)">Terverifikasi</button>
+                </div>
+            </div>
+
+            <div class="agen-grid" id="agenGrid">
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Andi+Baso&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Andi Baso</h3>
+                <p class="agen-role">Spesialis Lahan Pertanian</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Makassar, Sulsel</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="top">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Dewi+Sartika&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Dewi Sartika</h3>
+                <p class="agen-role">Spesialis Rumah Subsidi</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Kendari, Sultra</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status off">Offline</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Faisal+M&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Faisal Mahfud</h3>
+                <p class="agen-role">Spesialis Komersial & Ruko</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Manado, Sulut</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Rudy+K&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Rudy Kurniawan</h3>
+                <p class="agen-role">Spesialis Villa & Resort</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Palu, Sulteng</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Siti+Aminah&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Siti Aminah</h3>
+                <p class="agen-role">Konsultan Investasi Tanah</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Mamuju, Sulbar</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="top">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Irwan+Syah&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Irwan Syah</h3>
+                <p class="agen-role">Spesialis Rumah Cluster</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Gowa, Sulsel</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status off">Offline</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Hendra+P&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Hendra Pratama</h3>
+                <p class="agen-role">Agen Properti Retail</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Gorontalo Kota</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Budi Santoso</h3>
+                <p class="agen-role">Spesialis Lahan Industri</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Maros, Sulsel</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Amir+M&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Amir Mahmud</h3>
+                <p class="agen-role">Agen Rumah Second</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Baubau, Sultra</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="top">
+        <div class="agen-status off">Offline</div>
+        <div class="agen-body">
+            <div class="agen-avatar">
+                <img src="https://ui-avatars.com/api/?name=Grace+V&background=3d5b7a&color=fff" alt="Agen">
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <div class="agen-details">
+                <h3 class="nama-agen">Grace Veren</h3>
+                <p class="agen-role">Spesialis Gudang & Logistik</p>
+                <p class="agen-location"><i class="fas fa-map-marker-alt"></i> Bitung, Sulut</p>
+            </div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+    </div>
+
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Lutfi+H&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Lutfi Hakim</h3><p class="agen-role">Spesialis Apartemen</p><p class="agen-location">Makassar</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Sarah+J&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Sarah Junia</h3><p class="agen-role">Agen Properti Mewah</p><p class="agen-location">Manado</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Rahmat+E&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Rahmat Efendi</h3><p class="agen-role">Spesialis Tanah Kapling</p><p class="agen-location">Kendari</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status off">Offline</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Yuni+A&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Yuni Astuti</h3><p class="agen-role">Konsultan KPR</p><p class="agen-location">Palu</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Zulkifli+A&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Zulkifli Anas</h3><p class="agen-role">Spesialis Ruko & Bisnis</p><p class="agen-location">Bone</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Mitha+K&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Mitha Kasim</h3><p class="agen-role">Agen Kost-kostan</p><p class="agen-location">Gorontalo</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Bambang+S&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Bambang Sugeng</h3><p class="agen-role">Agen Properti Industri</p><p class="agen-location">Morowali</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Eka+Putri&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Eka Putri</h3><p class="agen-role">Spesialis Rumah Pantai</p><p class="agen-location">Bulukumba</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="verified">
+        <div class="agen-status off">Offline</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Hasan+D&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Hasan Daeng</h3><p class="agen-role">Agen Rumah Syariah</p><p class="agen-location">Gowa</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+    <div class="agen-card-v2" data-type="top verified">
+        <div class="agen-status">Online</div>
+        <div class="agen-body">
+            <div class="agen-avatar"><img src="https://ui-avatars.com/api/?name=Ria+A&background=3d5b7a&color=fff"></div>
+            <div class="agen-details"><h3>Ria Anggraini</h3><p class="agen-role">Agen Properti High-End</p><p class="agen-location">Tomohon</p></div>
+        </div>
+        <div class="agen-actions"><a href="#" class="btn-wa-full">WhatsApp</a></div>
+    </div>
+</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fungsi Filter Tab
+       function filterTab(category, btn) {
+    // 1. Reset class active di semua tombol tab
+    const tabs = document.querySelectorAll('.tab-item');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    
+    // 2. Tambah class active ke tombol yang diklik
+    btn.classList.add('active');
+
+    // 3. Filter Agen berdasarkan data-type
+    const cards = document.querySelectorAll('.agen-card-v2');
+    cards.forEach(card => {
+        const types = card.getAttribute('data-type');
+        if (category === 'all') {
+            card.style.display = 'block';
+        } else if (types.includes(category)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+        // Fungsi Cari Nama
+        function filterCari() {
+            const input = document.getElementById('inputCari').value.toLowerCase();
+            const cards = document.querySelectorAll('.agen-card-v2');
+            
+            cards.forEach(card => {
+                const nama = card.querySelector('.nama-agen').innerText.toLowerCase();
+                if (nama.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openNav() { document.getElementById("sideNav").classList.add("active"); document.getElementById("navOverlay").classList.add("active"); }
+        function closeNav() { document.getElementById("sideNav").classList.remove("active"); document.getElementById("navOverlay").classList.remove("active"); }
+    </script>
+</body>
+</html>

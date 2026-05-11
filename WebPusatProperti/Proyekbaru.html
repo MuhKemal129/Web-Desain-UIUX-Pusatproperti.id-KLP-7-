@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PusatProperti.id - Proyek Baru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="proyekbaru.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="nav-icon" onclick="openNav()"><i class="fas fa-bars"></i></button>
+        <div class="logo">Pusatproperti.id</div>
+        <button class="nav-icon" onclick="window.location.href='Login_member.html'">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </nav>
+
+    <div id="navOverlay" class="nav-overlay" onclick="closeNav()"></div>
+    <div id="sideNav" class="side-nav">
+        <button class="close-nav-btn" onclick="closeNav()"><i class="fas fa-times"></i></button>
+        <div class="nav-links">
+            <a href="HomePage.html">Beranda</a>
+            <a href="berandajual.html">Properti Dijual</a>
+            <a href="berandasewa.html">Properti Disewa</a>
+            <a href="proyekbaru.html" class="active">Proyek Baru</a>
+            <a href="KPR.html">KPR</a>
+            <a href="CariAgen.html">Cari Agen</a>
+            <a href="Testimoni.html">Testimoni</a>
+            <hr class="nav-divider">
+            <a href="#">Tentang Pusatproperti</a>
+            <a href="#">Join Pusatproperti</a>
+            <a href="#">Prestasi</a>
+            <a href="#">Artikel</a>
+            <a href="#">Kontak</a>
+        </div>
+    </div>
+
+    <main>
+       <section class="search-section">
+    <div class="search-widget">
+        <div class="search-input-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cari perumahan baru atau developer...">
+        </div>
+
+        <div class="search-tabs">
+            <button class="tab-btn active">Proyek Baru</button>
+        </div>
+
+        <div class="filter-row">
+            <div class="dropdown">
+                <button class="filter-btn" onclick="toggleDropdown('tipeDropdown')">
+                    Tipe Unit <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="tipeDropdown">
+                    <a href="#">Rumah Cluster</a>
+                    <a href="#">Apartemen</a>
+                    <a href="#">Ruko Proyek</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="filter-btn" onclick="toggleDropdown('hargaDropdown')">
+                    Harga Mulai <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="hargaDropdown">
+                    <a href="#">Di bawah Rp 500 Jt</a>
+                    <a href="#">Rp 500 Jt - 1 M</a>
+                    <a href="#">Di atas Rp 1 M</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+    <button class="filter-btn" onclick="openModal()">
+        Filter <i class="fas fa-sliders-h"></i>
+    </button>
+</div>
+        </div>
+    </div>
+</section>
+
+        <section class="properties-section container">
+            <div class="tagline-container">
+                <h2 class="tagline-main">Hunian Baru, Masa Depan Baru.</h2>
+                <p class="tagline-sub">Pilihan Proyek Eksklusif hanya di <strong>PusatProperti.id</strong></p>
+            </div>
+
+            <div class="section-header">
+                <div>
+                    <h2>Proyek Terbaru</h2>
+                    <p>6 Proyek pilihan langsung dari Developer</p>
+                </div>
+                <a href="#" class="view-all desktop-only">Lihat Semua</a>
+            </div>
+
+            <div class="property-grid">
+    
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Proyek 1">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Cluster</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 850 Juta</h3>
+            <h4 class="title">Grand Orchardz Makassar</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Tamalanrea, Makassar</p>
+            <div class="specs"><span>Tipe 45/90</span><span>3 KT</span><span>2 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+1&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">Baru Saja</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=800&auto=format&fit=crop" alt="Proyek 2">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Minimalis</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 450 Juta</h3>
+            <h4 class="title">Griya Permata Barru</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Barru, Sulawesi Selatan</p>
+            <div class="specs"><span>Tipe 36/72</span><span>2 KT</span><span>1 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+2&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">1 Jam Lalu</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="Proyek 3">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Modern</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 1,2 Miliar</h3>
+            <h4 class="title">Royal Coast Residence</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Panakkukang, Makassar</p>
+            <div class="specs"><span>Tipe 70/120</span><span>4 KT</span><span>3 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+3&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">2 Jam Lalu</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop" alt="Proyek 4">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Apartemen</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 600 Juta</h3>
+            <h4 class="title">Skyline Tower Makassar</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Pusat Kota, Makassar</p>
+            <div class="specs"><span>Tipe Studio</span><span>1 KT</span><span>1 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+4&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">Kemarin</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Proyek 5">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Villa</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 2,5 Miliar</h3>
+            <h4 class="title">The Highland Villa</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Malino, Gowa</p>
+            <div class="specs"><span>Tipe 120/500</span><span>3 KT</span><span>3 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+5&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">2 Hari Lalu</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Proyek 6">
+            <div class="badges">
+                <span class="badge badge-green">Proyek Baru</span>
+                <span class="badge badge-white">Komersil</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="price">Rp 900 Juta</h3>
+            <h4 class="title">Ruko Bisnis Boulevard</h4>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Maros, Sulawesi Selatan</p>
+            <div class="specs"><span>LT 60 / LB 120</span><span>2 KM</span></div>
+            <div class="card-footer">
+                <div class="agent-info">
+                    <img src="https://ui-avatars.com/api/?name=Dev+6&background=3d5b7a&color=fff" alt="Dev">
+                    <div><p class="agent-name">Official Developer</p><p class="date">3 Hari Lalu</p></div>
+                </div>
+                <a href="#" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Hubungi</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+            
+            <button class="btn-outline mobile-only-block mt-4">Lihat Proyek Lainnya</button>
+        </section>
+    </main>
+
+    <script>
+        // Fungsi untuk membuka/tutup dropdown (Tipe Unit & Harga)
+function toggleDropdown(id) {
+    const currentDropdown = document.getElementById(id);
+    const allDropdowns = document.querySelectorAll('.dropdown-content');
+
+    // Tutup semua dropdown lain sebelum membuka yang dipilih
+    allDropdowns.forEach(d => {
+        if (d.id !== id) {
+            d.classList.remove('show');
+        }
+    });
+
+    // Toggle dropdown yang diklik
+    if (currentDropdown) {
+        currentDropdown.classList.toggle('show');
+    }
+}
+
+// Fungsi untuk membuka Modal Filter
+function openModal() {
+    const modal = document.getElementById('filterModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Mengunci scroll latar belakang
+    }
+}
+
+// Fungsi untuk menutup Modal Filter
+function closeModal() {
+    const modal = document.getElementById('filterModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Mengaktifkan kembali scroll
+    }
+}
+
+// Menutup modal jika user mengklik area di luar kotak modal
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('filterModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Fungsi Sidebar (Menu Samping)
+function openNav() {
+    document.getElementById("sideNav").classList.add("active");
+    document.getElementById("navOverlay").classList.add("active");
+    document.body.style.overflow = 'hidden';
+}
+
+function closeNav() {
+    document.getElementById("sideNav").classList.remove("active");
+    document.getElementById("navOverlay").classList.remove("active");
+    document.body.style.overflow = 'auto';
+}
+
+// Logika Klik di Luar Elemen (Close on outside click)
+window.onclick = function(event) {
+    // Tutup dropdown jika klik di luar tombol filter
+    if (!event.target.closest('.filter-btn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            if (dropdowns[i].classList.contains('show')) {
+                dropdowns[i].classList.remove('show');
+            }
+        }
+    }
+
+    // Tutup modal jika klik pada area overlay (background hitam)
+    const modal = document.getElementById('filterModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+    
+    // Tutup sidebar jika klik pada overlay
+    const overlay = document.getElementById('navOverlay');
+    if (event.target === overlay) {
+        closeNav();
+    }
+}
+    </script>
+</body>
+</html>
