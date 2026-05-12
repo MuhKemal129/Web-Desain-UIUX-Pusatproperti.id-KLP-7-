@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Properti - PusatProperti.id</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="beranda.css">
+    <link rel="stylesheet" href="Detailproperti.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="nav-icon" onclick="openNav()"><i class="fas fa-bars"></i></button>
+        <div class="logo">Pusatproperti.id</div>
+        <button class="nav-icon" onclick="window.location.href='Login_member.html'"><i class="fas fa-user-circle"></i></button>
+    </nav>
+
+    <div id="navOverlay" class="nav-overlay" onclick="closeNav()"></div>
+    <div id="sideNav" class="side-nav">
+        <button class="close-nav-btn" onclick="closeNav()"><i class="fas fa-times"></i></button>
+        <div class="nav-links">
+           <a href="index.html">Beranda</a>
+            <a href="berandajual.html">Properti Dijual</a>
+            <a href="berandasewa.html">Properti Disewa</a>
+            <a href="Proyekbaru.html">Proyek Baru</a>
+            <a href="KPR.html">KPR</a>
+            <a href="CariAgen.html">Cari Agen</a>
+            <a href="Testimoni.html">Testimoni</a>
+            <hr class="nav-divider">
+            <a href="#">Tentang Pusatproperti</a>
+            <a href="#">Join Pusatproperti</a>
+            <a href="#">Prestasi</a>
+            <a href="#">Artikel</a>
+            <a href="#">Kontak</a>
+        </div>
+    </div>
+
+    <main class="detail-container container">
+        <section class="property-gallery">
+    <div class="main-img-container">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=100" id="mainImage" class="img-hd" alt="Tampak Depan HD">
+    </div>
+    <div class="thumbnail-grid">
+        <div class="thumb-container">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=100" onclick="changeImg(this.src)" alt="Sudut 1">
+            <i class="fas fa-search-plus thumb-zoom"></i>
+        </div>
+        <div class="thumb-container">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=400&q=100" onclick="changeImg(this.src)" alt="Sudut 2">
+            <i class="fas fa-search-plus thumb-zoom"></i>
+        </div>
+        <div class="thumb-container">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=100" onclick="changeImg(this.src)" alt="Sudut 3">
+            <i class="fas fa-search-plus thumb-zoom"></i>
+        </div>
+        <div class="thumb-container">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=100" onclick="changeImg(this.src)" alt="Sudut 4">
+            <i class="fas fa-search-plus thumb-zoom"></i>
+        </div>
+    </div>
+</section>
+
+        <div class="detail-content-grid">
+            <div class="content-left">
+                <div class="property-header">
+                    <h1>Jual Rumah Modern 1 Lantai + Mezzanine</h1>
+                    <div class="price-main">Rp 1,45 Miliar <i class="fas fa-check-circle"></i></div>
+                </div>
+
+                <div class="specs-container">
+                    <h3 class="section-title">Detail Properti</h3>
+                    <table class="specs-table">
+                        <tr><td>Transaksi</td><td>Jual</td></tr>
+                        <tr><td>Kamar Tidur</td><td>3</td></tr>
+                        <tr><td>Kamar Mandi</td><td>2</td></tr>
+                        <tr><td>Luas Tanah</td><td>140 m²</td></tr>
+                        <tr><td>Luas Bangunan</td><td>110 m²</td></tr>
+                        <tr><td>Tipe Properti</td><td>Rumah</td></tr>
+                        <tr><td>Alamat</td><td>Jl. Bougenville Raya No. 8</td></tr>
+                        <tr><td>Lokasi</td><td>Pandaan, Pasuruan</td></tr>
+                        <tr><td>Listrik</td><td>2200 Watt</td></tr>
+                        <tr><td>Sertifikat</td><td>SHM</td></tr>
+                        <tr><td>Hadap</td><td>Selatan</td></tr>
+                        <tr><td>ID Listing</td><td>PPID-0226-RMH</td></tr>
+                    </table>
+                </div>
+
+                <div class="description-box">
+                    <h3 class="section-title">Deskripsi Properti</h3>
+                    <p>Hunian eksklusif ini mengusung konsep Modern Mezzanine yang cerdas, memaksimalkan volume ruang sehingga memberikan kesan interior yang jauh lebih luas, megah, dan mewah. Dengan desain high ceiling dan penempatan jendela besar yang strategis, rumah ini menjamin sirkulasi udara yang segar serta pencahayaan alami yang maksimal di setiap sudut ruangan, menciptakan suasana hunian yang sehat sekaligus hemat energi. Area mezzanine multifungsi di lantai atas sangat ideal untuk dijadikan ruang kerja pribadi (home office) atau studio kreatif yang privasinya tetap terjaga tanpa mengurangi luas lahan utama. Terletak di lokasi super strategis dengan akses mudah ke berbagai fasilitas publik dan pusat perbelanjaan, rumah ini adalah pilihan investasi masa depan yang sempurna bagi keluarga muda atau profesional yang mendambakan gaya hidup praktis, elegan, dan penuh kenyamanan di tengah dinamika perkotaan.</p>
+                </div>
+            </div>
+
+            <div class="content-right">
+                <aside class="contact-card">
+                    <div class="agent-info">
+                        <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Agent">
+                        <div>
+                            <strong>Admin PusatProperti</strong>
+                            <p>Agen Terverifikasi</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/628123456789" class="btn-wa"><i class="fab fa-whatsapp"></i> Hubungi WhatsApp</a>
+                    <button class="btn-share"><i class="fas fa-share-alt"></i> Bagikan Properti</button>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function changeImg(src) { document.getElementById('mainImage').src = src; }
+        function openNav() { document.getElementById("sideNav").classList.add("active"); document.getElementById("navOverlay").classList.add("active"); }
+        function closeNav() { document.getElementById("sideNav").classList.remove("active"); document.getElementById("navOverlay").classList.remove("active"); }
+    </script>
+</body>
+</html>
