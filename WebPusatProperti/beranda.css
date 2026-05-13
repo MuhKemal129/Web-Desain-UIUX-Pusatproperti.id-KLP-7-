@@ -363,3 +363,174 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2); 
     margin: 15px 30px; /* Garisnya tetap sejajar dengan teks, tidak full */
 }
+
+/* ================================================================
+   FOOTER STYLING PUSATPROPERTI.ID
+   ================================================================ */
+
+.site-footer {
+    background-color: #1a2d55; /* Biru Navy khas properti profesional */
+    color: #e2e8f0;
+    padding: 60px 0 0 0;
+    font-family: 'Inter', sans-serif;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #10b981; /* Warna hijau aksen */
+    border-radius: 2px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.about-col p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* Tautan List */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-col ul li a:hover {
+    color: #10b981;
+    transform: translateX(5px);
+}
+
+/* Info Kontak Khusus */
+.contact-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.contact-col ul li i {
+    color: #10b981;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+/* Social Media */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #10b981;
+    transform: translateY(-3px);
+}
+
+/* Copyright Bottom Bar */
+.footer-bottom {
+    background-color: #0f172a;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-col, .about-col {
+        text-align: center;
+    }
+    
+    .contact-col ul li {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
