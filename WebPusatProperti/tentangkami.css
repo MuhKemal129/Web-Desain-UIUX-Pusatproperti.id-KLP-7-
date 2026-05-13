@@ -1,0 +1,404 @@
+/* ================================================================
+   STYLING HALAMAN TENTANG KAMI (FULL BLUE & WHITE)
+   ================================================================ */
+
+:root {
+    --navy: #1a2d55;
+    --primary-blue: #2563eb;
+    --light-blue: #f0f4f9;
+    --text-dark: #334155;
+    --text-gray: #64748b;
+    --white: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Block Background Colors --- */
+.bg-white { background-color: var(--white); }
+.bg-light-blue { background-color: var(--light-blue); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+
+/* --- Hero Section (Full Navy Blue & Maximized Space) --- */
+.about-hero {
+    background-color: var(--navy); 
+    padding: 80px 0 100px 0;
+    overflow: hidden;
+}
+
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Teks Kiri */
+.hero-text {
+    color: var(--white);
+}
+
+.hero-badge {
+    background: rgba(37, 99, 235, 0.15);
+    color: #60a5fa; 
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: #cbd5e1; 
+    line-height: 1.7;
+}
+
+/* Visual Kanan */
+.hero-visual {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.visual-backdrop {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    width: 80%;
+    height: 100%;
+    background-color: var(--primary-blue);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.hero-img {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.visual-dots {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    z-index: 3;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.15); 
+    display: flex;
+    flex-direction: column;
+    line-height: 0.5;
+}
+
+/* --- Story Section --- */
+.story-section {
+    padding: 80px 0; 
+}
+
+.story-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-image-group {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+.img-main {
+    width: 85%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.img-sub {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 55%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 10px solid var(--white);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.story-text .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.story-text .lead-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.story-text p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* --- Statistik Section --- */
+.stats-section {
+    background-color: var(--navy);
+    padding: 70px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.stat-box h3 {
+    font-size: 3.5rem;
+    color: #60a5fa; 
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.stat-box p {
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+/* --- Visi Misi Section --- */
+.vm-section {
+    padding: 80px 0; 
+}
+
+.vm-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vm-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.vm-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.vm-card {
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.vm-card:hover {
+    box-shadow: 0 20px 40px rgba(26, 45, 85, 0.08);
+    transform: translateY(-5px);
+    border-color: #bfdbfe;
+}
+
+.icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background: #eff6ff; 
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.vm-card h3 {
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.vm-card p, .vm-card ul {
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.vm-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vm-card ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.vm-card ul li i {
+    color: var(--primary-blue);
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+/* --- Tim Section --- */
+.team-section {
+    padding: 80px 0 100px 0;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+}
+
+.team-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.team-grid {
+    display: grid;
+    /* Ubah jadi 4 kolom sejajar */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: var(--white);
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 45, 85, 0.08);
+}
+
+.team-img-wrapper img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 3px solid var(--primary-blue);
+    padding: 4px;
+}
+
+.team-card h4 {
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+.team-card .role {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.team-card .desc {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+/* --- Responsif --- */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .hero-split {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .hero-visual {
+        justify-content: center;
+        height: 400px;
+    }
+    .visual-backdrop {
+        right: 10%;
+        width: 90%;
+    }
+    .hero-img { width: 100%; }
+    
+    .story-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .story-image-group {
+        height: 400px;
+        margin-bottom: 40px;
+    }
+    .img-main { width: 100%; height: 350px; }
+    .img-sub { width: 60%; height: 200px; }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .vm-grid, .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 { font-size: 2.5rem; }
+    .about-hero-content h1 { font-size: 2.2rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .story-image-group { height: 300px; }
+    .img-main { height: 250px; }
+    .img-sub { display: none; } 
+}
