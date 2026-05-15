@@ -655,7 +655,10 @@
     cards.forEach(card => {
 
         let show = true;
-
+         // TIPE
+        if(tipe && card.dataset.type !== tipe) {
+            show = false;
+        }
 
         // PROVINSI
         if(provinsi && card.dataset.provinsi !== provinsi) {
