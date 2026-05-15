@@ -48,35 +48,86 @@
                 </div>
 
                 <div class="filter-row">
-                    <div class="dropdown">
-                        <button class="filter-btn" onclick="toggleDropdown('tipeDropdown')">
-                            Pilih Tipe <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="dropdown-content" id="tipeDropdown">
-                            <a href="#">Semua Tipe</a>
-                            <a href="#">Rumah</a>
-                            <a href="#">Apartemen</a>
-                            <a href="#">Ruko</a>
-                            <a href="#">Villa</a>
-                            <a href="#">Tanah</a>
-                            <a href="#">Rumah Kost</a>
-                            <a href="#">Toko</a>
-                            <a href="#">Gudang</a>
-                        </div>
-                    </div>
+
+    <div class="dropdown">
+        <button class="filter-btn"
+            onclick="toggleDropdown('tipeDropdown')"
+            id="selectedType">
+
+            Pilih Tipe <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="dropdown-content" id="tipeDropdown">
+
+            <a href="#" onclick="filterProperty('all')">
+                Semua Tipe
+            </a>
+
+            <a href="#" onclick="filterProperty('Rumah')">
+                Rumah
+            </a>
+
+            <a href="#" onclick="filterProperty('Apartemen')">
+                Apartemen
+            </a>
+
+            <a href="#" onclick="filterProperty('Ruko')">
+                Ruko
+            </a>
+
+            <a href="#" onclick="filterProperty('Villa')">
+                Villa
+            </a>
+
+            <a href="#" onclick="filterProperty('Tanah')">
+                Tanah
+            </a>
+
+            <a href="#" onclick="filterProperty('Rumah Kost')">
+                Rumah Kost
+            </a>
+
+            <a href="#" onclick="filterProperty('Toko')">
+                Toko
+            </a>
+
+            <a href="#" onclick="filterProperty('Gudang')">
+                Gudang
+            </a>
+
+        </div>
+    </div>
 
                     <div class="dropdown">
-                        <button class="filter-btn" onclick="toggleDropdown('hargaDropdown')">
-                            Harga <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="dropdown-content" id="hargaDropdown">
-                            <a href="#">Semua Harga</a>
-                            <a href="#">Di bawah Rp 30 Juta / thn</a>
-                            <a href="#">Rp 30 Juta - Rp 70 Juta / thn</a>
-                            <a href="#">Di atas Rp 70 Juta / thn</a>
-                        </div>
-                    </div>
 
+    <button class="filter-btn"
+        onclick="toggleDropdown('hargaDropdown')"
+        id="selectedPrice">
+
+        Harga <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="dropdown-content" id="hargaDropdown">
+
+        <a href="#" onclick="filterPrice('all')">
+            Semua Harga
+        </a>
+
+        <a href="#" onclick="filterPrice('30')">
+            Di bawah Rp 30 Juta / thn
+        </a>
+
+        <a href="#" onclick="filterPrice('70')">
+            Rp 30 Juta - Rp 70 Juta / thn
+        </a>
+
+        <a href="#" onclick="filterPrice('71')">
+            Di atas Rp 70 Juta / thn
+        </a>
+
+    </div>
+
+</div>
                     <div class="dropdown">
                         <button class="filter-btn" onclick="openModal()">
                             Filter <i class="fas fa-chevron-down"></i>
@@ -114,7 +165,7 @@
 
             <div class="property-grid">
                 
-                <div class="card">
+                <div class="card" data-type="Apartemen" data-price="4,5">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
                         <div class="badges">
@@ -137,7 +188,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-type="Rumah" data-price="35">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80" alt="Rumah Cluster Minimalis">
                         <div class="badges">
@@ -160,7 +211,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-type="Villa" data-price="15">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Villa Tropis Modern">
                         <div class="badges">
@@ -183,7 +234,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-type="Rumah" data-price="65">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Townhouse Eksklusif">
                         <div class="badges">
@@ -206,7 +257,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-type="Rumah" data-price="20">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Rumah Sederhana">
                         <div class="badges">
@@ -229,7 +280,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" data-type="Apartemen" data-price="3,5">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Apartemen Studio Interior">
                         <div class="badges">
@@ -409,6 +460,99 @@
             var modal = document.getElementById('filterModal');
             if (event.target == modal) { closeModal(); }
         }
+        function filterPrice(price) {
+
+    let text = "Harga";
+
+    if(price === 'all') {
+        text = "Semua Harga";
+    }
+    else if(price === '30') {
+        text = "Di bawah Rp 30 Juta / thn";
+    }
+    else if(price === '70') {
+        text = "Rp 30 Juta - Rp 70 Juta / thn";
+    }
+    else if(price === '71') {
+        text = "Di atas Rp 70 Juta / thn";
+    }
+
+    document.getElementById("selectedPrice").innerHTML =
+        text + ' <i class="fas fa-chevron-down"></i>';
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let propertyPrice = parseInt(card.dataset.price);
+
+        // semua harga
+        if(price === 'all') {
+            card.style.display = "block";
+        }
+
+        // dibawah 30 jt
+        else if(price === '30' && propertyPrice < 30) {
+            card.style.display = "block";
+        }
+
+        // 30 - 70 jt
+        else if(price === '70' &&
+                propertyPrice >= 30 &&
+                propertyPrice <= 70) {
+
+            card.style.display = "block";
+        }
+
+        // di atas 70 jt
+        else if(price === '71' &&
+                propertyPrice > 70) {
+
+            card.style.display = "block";
+        }
+
+        else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("hargaDropdown")
+        .classList.remove("show");
+}
+  function filterProperty(type) {
+
+    // ubah tulisan tombol
+    document.getElementById("selectedType").innerHTML =
+        (type === 'all' ? 'Semua Tipe' : type) +
+        ' <i class="fas fa-chevron-down"></i>';
+
+    // ambil semua card
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        // tampilkan semua
+        if(type === 'all') {
+            card.style.display = "block";
+        }
+
+        // tampil sesuai tipe
+        else if(card.dataset.type === type) {
+            card.style.display = "block";
+        }
+
+        // sembunyikan selain tipe dipilih
+        else {
+            card.style.display = "none";
+        }
+
+    });
+
+    // tutup dropdown
+    document.getElementById("tipeDropdown")
+        .classList.remove("show");
+}   
     </script>
 </body>
 </html>
