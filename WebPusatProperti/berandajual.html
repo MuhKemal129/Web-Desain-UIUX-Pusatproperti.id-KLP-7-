@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PusatProperti.id - Cari & Bandingkan Properti</title>
+    <title>Sewa Properti - PusatProperti.id</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="beranda.css">
 </head>
@@ -43,12 +43,11 @@
                 </div>
 
                 <div class="search-tabs">
-                    <button class="tab-btn active" onclick="window.location.href='Beranda.html'">Dijual</button>
-                    <button class="tab-btn" onclick="window.location.href='berandasewa.html'">Disewa</button>
+                    <button class="tab-btn" onclick="window.location.href='berandajual.html'">Dijual</button>
+                    <button class="tab-btn active" onclick="window.location.href='berandasewa.html'">Disewa</button>
                 </div>
 
-               <!-- FILTER TIPE -->
-<div class="filter-row">
+                <div class="filter-row">
 
     <div class="dropdown">
         <button class="filter-btn"
@@ -99,9 +98,7 @@
         </div>
     </div>
 
-   <!-- DROPDOWN HARGA -->
-
-<div class="dropdown">
+                    <div class="dropdown">
 
     <button class="filter-btn"
         onclick="toggleDropdown('hargaDropdown')"
@@ -116,89 +113,71 @@
             Semua Harga
         </a>
 
-        <a href="#" onclick="filterPrice('500')">
-            Di bawah Rp 500 Juta
+        <a href="#" onclick="filterPrice('30')">
+            Di bawah Rp 30 Juta / thn
         </a>
 
-        <a href="#" onclick="filterPrice('1000')">
-            Rp 500 Juta - Rp 1 M
+        <a href="#" onclick="filterPrice('70')">
+            Rp 30 Juta - Rp 70 Juta / thn
         </a>
 
-        <a href="#" onclick="filterPrice('3000')">
-            Rp 1 M - Rp 3 M
-        </a>
-
-        <a href="#" onclick="filterPrice('3001')">
-            Di atas Rp 3 M
+        <a href="#" onclick="filterPrice('71')">
+            Di atas Rp 70 Juta / thn
         </a>
 
     </div>
 
 </div>
+                    <div class="dropdown">
+                        <button class="filter-btn" onclick="openModal()">
+                            Filter <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
 
-    <div class="dropdown">
-        <button class="filter-btn" onclick="openModal()">
-            Filter <i class="fas fa-chevron-down"></i>
-        </button>
-    </div>
-    
-
-    <div class="dropdown">
-        <button class="filter-btn icon-only" onclick="toggleDropdown('sortDropdown')">
-            <i class="fas fa-arrows-up-down"></i>
-        </button>
-
-        <div class="dropdown-content dropdown-right" id="sortDropdown">
-            <a href="#">Terpopuler</a>
-            <a href="#">Terbaru</a>
-            <a href="#">Harga Terendah</a>
-            <a href="#">Harga Tertinggi</a>
-        </div>
-    </div>
-
-</div>
+                    <div class="dropdown">
+                        <button class="filter-btn icon-only" onclick="toggleDropdown('sortDropdown')">
+                            <i class="fas fa-arrows-up-down"></i>
+                        </button>
+                        <div class="dropdown-content dropdown-right" id="sortDropdown">
+                            <a href="#">Terpopuler</a>
+                            <a href="#">Terbaru</a>
+                            <a href="#">Sewa Terendah</a>
+                            <a href="#">Sewa Tertinggi</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="properties-section container">
             <div class="tagline-container">
-                <h2 class="tagline-main">Cari. Bandingkan. Dapatkan Properti Terbaik.</h2>
-                <p class="tagline-sub">Semua Lebih Mudah di <strong>PusatProperti.id</strong></p>
+                <h2 class="tagline-main">Sewa Properti Idaman Anda Sekarang.</h2>
+                <p class="tagline-sub">Pilihan Terlengkap Hanya di <strong>PusatProperti.id</strong></p>
             </div>
 
             <div class="section-header">
                 <div>
-                    <h2>Properti Terpopuler</h2>
-                    <p>Rekomendasi properti pilihan untuk Anda</p>
+                    <h2>Properti Disewakan</h2>
+                    <p>Rekomendasi sewa properti pilihan untuk Anda</p>
                 </div>
                 <a href="#" class="view-all desktop-only">Lihat Semua</a>
             </div>
 
             <div class="property-grid">
                 
-                <div class="card" data-type="Rumah"     data-type="Rumah"
-     data-price="1450"
-     data-provinsi="Sulawesi Selatan"
-     data-kota="Makassar"
-     data-lokasi="Panakkukang"
-     data-kt="3"
-     data-km="2"
-     data-lt="140"
-     data-lb="110"
-     data-sertifikat="SHM"
-     data-transaksi="Dijual">
+                <div class="card" data-type="Apartemen" data-price="4,5">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rumah Modern">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
-                            <span class="badge badge-white">Rumah</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Apartemen</span>
                         </div>
                     </div>
-                    <div class="card-body" onclick="window.location.href='detailproperti.html'" style="cursor: pointer;">
-                        <h3 class="price">Rp 1,45 M</h3>
-                        <h4 class="title">Rumah Modern 1 Lantai + Mezzanine Style</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Lokasi Strategis</p>
-                        <div class="specs"><span>LT: 140 m²</span><span>LB: 110 m²</span><span>KT: 3</span><span>KM: 2</span></div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 4,5 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Apartemen Cozy 1BR Full Furnished</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Pusat Kota Makassar</p>
+                        <div class="specs"><span>LB: 45 m²</span><span>KT: 1</span><span>KM: 1</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -209,19 +188,19 @@
                     </div>
                 </div>
 
-                <div class="card" data-type="Rumah" data-price="3800">
+                <div class="card" data-type="Rumah" data-price="35">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rumah Luxury">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80" alt="Rumah Cluster Minimalis">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
                             <span class="badge badge-white">Rumah</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="price">Rp 3,8 M</h3>
-                        <h4 class="title">Rumah Modern Luxury 2 Lantai</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Lokasi Strategis</p>
-                        <div class="specs"><span>LT: 220 m²</span><span>LB: 300 m²</span><span>KT: 4</span><span>KM: 3</span></div>
+                        <h3 class="price">Rp 35 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Cluster Minimalis Modern Tipe 45</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Gowa, Sulawesi Selatan</p>
+                        <div class="specs"><span>LT: 90 m²</span><span>LB: 45 m²</span><span>KT: 2</span><span>KM: 1</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -232,28 +211,19 @@
                     </div>
                 </div>
 
-                <div class="card" data-type="Apartemen" data-price="650"
-                data-provinsi="Sulawesi Selatan"
-     data-kota="Makassar"
-     data-lokasi="Tamalanrea"
-     data-kt="1"
-     data-km="1"
-     data-lt="140"
-     data-lb="110"
-     data-sertifikat="SHM"
-     data-transaksi="Dijual">
+                <div class="card" data-type="Villa" data-price="15">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apartemen Studio">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Villa Tropis Modern">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
-                            <span class="badge badge-white">Apartemen</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Villa</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="price">Rp 650 Juta</h3>
-                        <h4 class="title">Apartemen Studio Minimalis Full Furnished</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Pusat Kota</p>
-                        <div class="specs"><span>LB: 32 m²</span><span>KT: 1</span><span>KM: 1</span></div>
+                        <h3 class="price">Rp 15 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Villa Tropis Modern dengan Kolam Renang</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Malino, Gowa</p>
+                        <div class="specs"><span>LT: 300 m²</span><span>LB: 150 m²</span><span>KT: 3</span><span>KM: 3</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -264,19 +234,19 @@
                     </div>
                 </div>
 
-                <div class="card" data-type="Ruko" data-price="2500">
+                <div class="card" data-type="Rumah" data-price="65">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ruko Komersial">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Townhouse Eksklusif">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
-                            <span class="badge badge-white">Ruko</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Rumah</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="price">Rp 2,5 M</h3>
-                        <h4 class="title">Ruko Komersial 3 Lantai Pinggir Jalan Utama</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Area Bisnis</p>
-                        <div class="specs"><span>LT: 90 m²</span><span>LB: 250 m²</span><span>KM: 3</span></div>
+                        <h3 class="price">Rp 65 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Townhouse Eksklusif 2 Lantai Strategis</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Panakkukang, Makassar</p>
+                        <div class="specs"><span>LT: 120 m²</span><span>LB: 180 m²</span><span>KT: 3</span><span>KM: 3</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -287,19 +257,19 @@
                     </div>
                 </div>
 
-                <div class="card" data-type="Rumah" data-price="850">
+                <div class="card" data-type="Rumah" data-price="20">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rumah Cluster">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Rumah Sederhana">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
                             <span class="badge badge-white">Rumah</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="price">Rp 850 Juta</h3>
-                        <h4 class="title">Rumah Keluarga Aman di Dalam Cluster</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Kawasan Berkembang</p>
-                        <div class="specs"><span>LT: 90 m²</span><span>LB: 75 m²</span><span>KT: 2</span><span>KM: 1</span></div>
+                        <h3 class="price">Rp 20 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ tahun</span></h3>
+                        <h4 class="title">Rumah Keluarga Siap Huni Akses Mudah</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Tamalanrea, Makassar</p>
+                        <div class="specs"><span>LT: 80 m²</span><span>LB: 60 m²</span><span>KT: 2</span><span>KM: 1</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -310,19 +280,19 @@
                     </div>
                 </div>
 
-                <div class="card" data-type="Villa" data-price="5200">
+                <div class="card" data-type="Apartemen" data-price="3,5">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa Tropis">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Apartemen Studio Interior">
                         <div class="badges">
-                            <span class="badge badge-green">Jual</span>
-                            <span class="badge badge-white">Villa</span>
+                            <span class="badge" style="background: #3b82f6; color: white;">Sewa</span>
+                            <span class="badge badge-white">Apartemen</span>
                         </div>
                     </div>
-                    <div class="card-body"> 
-                        <h3 class="price">Rp 5,2 M</h3>
-                        <h4 class="title">Villa Tropis Eksklusif dengan View Pegunungan</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Kawasan Wisata</p>
-                        <div class="specs"><span>LT: 500 m²</span><span>LB: 350 m²</span><span>KT: 5</span><span>KM: 4</span></div>
+                    <div class="card-body">
+                        <h3 class="price">Rp 3,5 Juta <span style="font-size: 0.8rem; font-weight: normal; color: #6b7280; margin-left: 5px;">/ bulan</span></h3>
+                        <h4 class="title">Apartemen Studio Compact Estetik Full Furnished</h4>
+                        <p class="location"><i class="fas fa-map-marker-alt" style="color:#6b7280; margin-right:4px;"></i> Rappocini, Makassar</p>
+                        <div class="specs"><span>LB: 30 m²</span><span>KT: 1</span><span>KM: 1</span></div>
                         <div class="card-footer">
                             <div class="agent-info">
                                 <img src="https://ui-avatars.com/api/?name=Admin+Pusat&background=3d5b7a&color=fff" alt="Admin">
@@ -335,163 +305,65 @@
 
             </div>
             
-            <button class="btn-outline mobile-only-block mt-4">Lihat Semua Properti</button>
+            <button class="btn-outline mobile-only-block mt-4">Lihat Semua Properti Disewakan</button>
         </section>
     </main>
 
     <div id="filterModal" class="modal-overlay">
-    <div class="modal-box">
-
-        <div class="modal-header">
-            <h2>Filter</h2>
-            <button class="close-btn" onclick="closeModal()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <div class="modal-body">
-
-            <!-- TRANSAKSI -->
-            <div class="form-row">
-                <label>Transaksi</label>
-
-                <select id="filterTransaksi">
-                    <option value="">Semua</option>
-                    <option value="Dijual">Dijual</option>
-                    <option value="Disewa">Disewa</option>
-                </select>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Filter</h2>
+                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
             </div>
-
-            <!-- TIPE -->
-            <div class="form-row">
-                <label>Tipe</label>
-
-                <select id="filterTipe">
-                    <option value="">Semua Tipe</option>
-                    <option value="Rumah">Rumah</option>
-                    <option value="Apartemen">Apartemen</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Ruko">Ruko</option>
-                    <option value="Tanah">Tanah</option>
-                    <option value="Rumah Kost">Rumah Kost</option>
-                    <option value="Toko">Toko</option>
-                    <option value="Gudang">Gudang</option>
-                </select>
-            </div>
-
-            <!-- SERTIFIKAT -->
-            <div class="form-row">
-                <label>Sertifikat</label>
-
-                <select id="filterSertifikat">
-                    <option value="">Semua Sertifikat</option>
-                    <option value="SHM">SHM</option>
-                    <option value="HGB">HGB</option>
-                    <option value="Lain-lain">Lain-lain</option>
-                </select>
-            </div>
-
-            <!-- PROVINSI -->
-            <div class="form-row">
-                <label>Provinsi</label>
-
-                <select id="filterProvinsi">
-                    <option value="">Semua Provinsi</option>
-                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
-                    <option value="Sulawesi Barat">Sulawesi Barat</option>
-                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
-                    <option value="Sulawesi Utara">Sulawesi Utara</option>
-                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-                </select>
-            </div>
-
-            <!-- KOTA -->
-            <div class="form-row">
-                <label>Kota</label>
-
-                <select id="filterKota">
-                    <option value="">Semua Kota</option>
-                    <option value="Makassar">Makassar</option>
-                    <option value="Gowa">Gowa</option>
-                    <option value="Maros">Maros</option>
-                    <option value="Bulukumba">Bulukumba</option>
-                    <option value="Enrekang">Enrekang</option>
-                    <option value="Jeneponto">Jeneponto</option>
-                </select>
-            </div>
-
-            <!-- LOKASI -->
-            <div class="form-row">
-                <label>Lokasi</label>
-
-                <select id="filterLokasi">
-                    <option value="">Semua Lokasi</option>
-                    <option value="Tamalanrea">Tamalanrea</option>
-                    <option value="Panakkukang">Panakkukang</option>
-                </select>
-            </div>
-
-            <!-- KAMAR TIDUR -->
-            <div class="form-row">
-                <label>Kamar Tidur</label>
-
-                <select id="filterKT">
-                    <option value="">Semua</option>
-                    <option value="1">1+</option>
-                    <option value="2">2+</option>
-                    <option value="3">3+</option>
-                    <option value="4">4+</option>
-                </select>
-            </div>
-
-            <!-- KAMAR MANDI -->
-            <div class="form-row">
-                <label>Kamar Mandi</label>
-
-                <select id="filterKM">
-                    <option value="">Semua</option>
-                    <option value="1">1+</option>
-                    <option value="2">2+</option>
-                    <option value="3">3+</option>
-                </select>
-            </div>
-
-            <!-- LUAS TANAH -->
-            <div class="form-row">
-                <label>Luas Tanah (m²)</label>
-
-                <div class="range-inputs">
-                    <input type="number" id="ltMin" placeholder="Min">
-                    <span>s/d</span>
-                    <input type="number" id="ltMax" placeholder="Max">
+            <div class="modal-body">
+                <div class="form-row">
+                    <label>Transaksi</label>
+                    <select><option selected>Dijual</option><option>Disewa</option><option>Dijual/Disewa</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Tipe</label>
+                    <select><option>Pilih Tipe</option><option>Rumah</option><option>Apartemen</option><option>Villa</option><option>Tanah</option><option>Rumah Kost<option>Toko</option><option>Gudang</select>
+                </div>
+                <div class="form-row">
+                    <label>Sertifikat</label>
+                    <select><option>Pilih Sertifikat</option><option>SHM</option><option>HGB</option><option>Lain-lain</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Provinsi</label>
+                    <select><option>Pilih Provinsi</option><option>Sulawesi Selatan</option><option>Sulawesi Barat</option><option>Sulawesi Tengah</option><option>Sulawesi Utara</option><option>Sulawesi Tenggara</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kota</label>
+                    <select><option>Pilih Kota</option><option>Makassar</option><option>Gowa</option><option>Maros</option><option>Bulukumba</option><option>Enrekang</option><option>Jeneponto</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Lokasi</label>
+                    <select><option>Pilih Lokasi</option><option>Tamalanrea</option><option>Panakkukang</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kamar Tidur</label>
+                    <select><option>Pilih Kamar tidur</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Kamar Mandi</label>
+                    <select><option>Pilih Kamar Mandi</option><option>1+</option><option>2+</option><option>3+</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Luas Tanah (m<sup>2</sup>)</label>
+                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
+                </div>
+                <div class="form-row">
+                    <label>Luas Bangunan (m<sup>2</sup>)</label>
+                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
                 </div>
             </div>
-
-            <!-- LUAS BANGUNAN -->
-            <div class="form-row">
-                <label>Luas Bangunan (m²)</label>
-
-                <div class="range-inputs">
-                    <input type="number" id="lbMin" placeholder="Min">
-                    <span>s/d</span>
-                    <input type="number" id="lbMax" placeholder="Max">
-                </div>
+            <div class="modal-footer">
+                <button class="btn-batal" onclick="closeModal()">Batal</button>
+                <button class="btn-cari" onclick="closeModal()">Cari</button>
             </div>
-
         </div>
-
-        <div class="modal-footer">
-            <button class="btn-batal" onclick="closeModal()">
-                Batal
-            </button>
-
-            <button class="btn-cari" onclick="applyFilter()">
-                Cari
-            </button>
-        </div>
-
     </div>
-</div>    <footer class="site-footer">
+<footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col about-col">
                 <h3 class="footer-logo">Pusatproperti.id</h3>
@@ -588,7 +460,67 @@
             var modal = document.getElementById('filterModal');
             if (event.target == modal) { closeModal(); }
         }
-        function filterProperty(type) {
+        function filterPrice(price) {
+
+    let text = "Harga";
+
+    if(price === 'all') {
+        text = "Semua Harga";
+    }
+    else if(price === '30') {
+        text = "Di bawah Rp 30 Juta / thn";
+    }
+    else if(price === '70') {
+        text = "Rp 30 Juta - Rp 70 Juta / thn";
+    }
+    else if(price === '71') {
+        text = "Di atas Rp 70 Juta / thn";
+    }
+
+    document.getElementById("selectedPrice").innerHTML =
+        text + ' <i class="fas fa-chevron-down"></i>';
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let propertyPrice = parseInt(card.dataset.price);
+
+        // semua harga
+        if(price === 'all') {
+            card.style.display = "block";
+        }
+
+        // dibawah 30 jt
+        else if(price === '30' && propertyPrice < 30) {
+            card.style.display = "block";
+        }
+
+        // 30 - 70 jt
+        else if(price === '70' &&
+                propertyPrice >= 30 &&
+                propertyPrice <= 70) {
+
+            card.style.display = "block";
+        }
+
+        // di atas 70 jt
+        else if(price === '71' &&
+                propertyPrice > 70) {
+
+            card.style.display = "block";
+        }
+
+        else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("hargaDropdown")
+        .classList.remove("show");
+}
+  function filterProperty(type) {
 
     // ubah tulisan tombol
     document.getElementById("selectedType").innerHTML =
@@ -621,177 +553,6 @@
     document.getElementById("tipeDropdown")
         .classList.remove("show");
 }   
-
-
-function filterPrice(price) {
-
-    // ganti tulisan tombol
-    let text = "Harga";
-
-    if(price === 'all') {
-        text = "Semua Harga";
-    }
-    else if(price === '500') {
-        text = "Di bawah Rp 500 Juta";
-    }
-    else if(price === '1000') {
-        text = "Rp 500 Juta - Rp 1 M";
-    }
-    else if(price === '3000') {
-        text = "Rp 1 M - Rp 3 M";
-    }
-    else if(price === '3001') {
-        text = "Di atas Rp 3 M";
-    }
-
-    document.getElementById("selectedPrice").innerHTML =
-        text + ' <i class="fas fa-chevron-down"></i>';
-
-    // ambil semua card
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        let propertyPrice = parseInt(card.dataset.price);
-
-        // semua harga
-        if(price === 'all') {
-            card.style.display = "block";
-        }
-
-        // dibawah 500 juta
-        else if(price === '500' && propertyPrice < 500) {
-            card.style.display = "block";
-        }
-
-        // 500 juta - 1 m
-        else if(price === '1000' &&
-                propertyPrice >= 500 &&
-                propertyPrice <= 1000) {
-
-            card.style.display = "block";
-        }
-
-        // 1m - 3m
-        else if(price === '3000' &&
-                propertyPrice > 1000 &&
-                propertyPrice <= 3000) {
-
-            card.style.display = "block";
-        }
-
-        // di atas 3m
-        else if(price === '3001' &&
-                propertyPrice > 3000) {
-
-            card.style.display = "block";
-        }
-
-        else {
-            card.style.display = "none";
-        }
-
-    });
-
-    // tutup dropdown
-    document.getElementById("hargaDropdown")
-        .classList.remove("show");
-}
-
-function applyFilter() {
-
-    const tipe = document.getElementById("filterTipe").value;
-    const provinsi = document.getElementById("filterProvinsi").value;
-    const kota = document.getElementById("filterKota").value;
-    const lokasi = document.getElementById("filterLokasi").value;
-    const sertifikat = document.getElementById("filterSertifikat").value;
-    const transaksi = document.getElementById("filterTransaksi").value;
-
-    const kt = document.getElementById("filterKT").value;
-    const km = document.getElementById("filterKM").value;
-
-    const ltMin = document.getElementById("ltMin").value;
-    const ltMax = document.getElementById("ltMax").value;
-
-    const lbMin = document.getElementById("lbMin").value;
-    const lbMax = document.getElementById("lbMax").value;
-
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        let show = true;
-
-        // TIPE
-        if(tipe && card.dataset.type !== tipe) {
-            show = false;
-        }
-
-        // PROVINSI
-        if(provinsi && card.dataset.provinsi !== provinsi) {
-            show = false;
-        }
-
-        // KOTA
-        if(kota && card.dataset.kota !== kota) {
-            show = false;
-        }
-
-        // LOKASI
-        if(lokasi && card.dataset.lokasi !== lokasi) {
-            show = false;
-        }
-
-        // SERTIFIKAT
-        if(sertifikat && card.dataset.sertifikat !== sertifikat) {
-            show = false;
-        }
-
-        // TRANSAKSI
-        if(transaksi && card.dataset.transaksi !== transaksi) {
-            show = false;
-        }
-
-        // KAMAR TIDUR
-        if(kt && parseInt(card.dataset.kt) < parseInt(kt)) {
-            show = false;
-        }
-
-        // KAMAR MANDI
-        if(km && parseInt(card.dataset.km) < parseInt(km)) {
-            show = false;
-        }
-
-        // LUAS TANAH
-        if(ltMin && parseInt(card.dataset.lt) < parseInt(ltMin)) {
-            show = false;
-        }
-
-        if(ltMax && parseInt(card.dataset.lt) > parseInt(ltMax)) {
-            show = false;
-        }
-
-        // LUAS BANGUNAN
-        if(lbMin && parseInt(card.dataset.lb) < parseInt(lbMin)) {
-            show = false;
-        }
-
-        if(lbMax && parseInt(card.dataset.lb) > parseInt(lbMax)) {
-            show = false;
-        }
-
-        // TAMPIL / SEMBUNYI
-        if(show) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-    closeModal();
-}
-
     </script>
 </body>
 </html>
