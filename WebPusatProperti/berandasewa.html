@@ -165,13 +165,14 @@
 
             <div class="property-grid">
                 
-                <div class="card" data-type="Apartemen" data-price="4,5" data-kota="Makassar"
+                <div class="card" data-type="Apartemen" data-price="4,5"
+                     data-provinsi="Sulawesi Selatan"
+     data-kota="Makassar"
      data-lokasi="Tamalanrea"
      data-kt="1"
      data-km="1"
-     data-lt=""
-     data-lb="45"
-     data-sertifikat="SHM">
+     data-lt="140"
+     data-lb="45">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
                         <div class="badges">
@@ -444,7 +445,7 @@
         </div>
 
     </div>
-</div>  
+</div>    
 <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col about-col">
@@ -635,12 +636,13 @@
     document.getElementById("tipeDropdown")
         .classList.remove("show");
 }   
-        function applyFilter() {
+function applyFilter() {
+
+    const tipe = document.getElementById("filterTipe").value;
     const provinsi = document.getElementById("filterProvinsi").value;
     const kota = document.getElementById("filterKota").value;
     const lokasi = document.getElementById("filterLokasi").value;
-    const tipe = document.getElementById("filterTipe").value;
-
+    
     const kt = document.getElementById("filterKT").value;
     const km = document.getElementById("filterKM").value;
 
@@ -655,7 +657,8 @@
     cards.forEach(card => {
 
         let show = true;
-         // TIPE
+
+        // TIPE
         if(tipe && card.dataset.type !== tipe) {
             show = false;
         }
@@ -672,11 +675,6 @@
 
         // LOKASI
         if(lokasi && card.dataset.lokasi !== lokasi) {
-            show = false;
-        }
-
-        // TRANSAKSI
-        if(transaksi && card.dataset.transaksi !== transaksi) {
             show = false;
         }
 
