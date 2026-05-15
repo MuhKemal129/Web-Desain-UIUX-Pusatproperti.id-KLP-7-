@@ -171,8 +171,7 @@
      data-km="1"
      data-lt=""
      data-lb="45"
-     data-sertifikat="SHM"
-     data-transaksi="Dijual">
+     data-sertifikat="SHM">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
                         <div class="badges">
@@ -327,17 +326,6 @@
         </div>
 
         <div class="modal-body">
-
-            <!-- TRANSAKSI -->
-            <div class="form-row">
-                <label>Transaksi</label>
-
-                <select id="filterTransaksi">
-                    <option value="">Semua</option>
-                    <option value="Dijual">Dijual</option>
-                    <option value="Disewa">Disewa</option>
-                </select>
-            </div>
 
             <!-- TIPE -->
             <div class="form-row">
@@ -648,8 +636,6 @@
         .classList.remove("show");
 }   
         function applyFilter() {
-
-    const tipe = document.getElementById("filterTipe").value;
     const provinsi = document.getElementById("filterProvinsi").value;
     const kota = document.getElementById("filterKota").value;
     const lokasi = document.getElementById("filterLokasi").value;
@@ -671,10 +657,6 @@
 
         let show = true;
 
-        // TIPE
-        if(tipe && card.dataset.type !== tipe) {
-            show = false;
-        }
 
         // PROVINSI
         if(provinsi && card.dataset.provinsi !== provinsi) {
