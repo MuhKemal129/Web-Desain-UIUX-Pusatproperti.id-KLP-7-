@@ -165,7 +165,14 @@
 
             <div class="property-grid">
                 
-                <div class="card" data-type="Apartemen" data-price="4,5">
+                <div class="card" data-type="Apartemen" data-price="4,5" data-kota="Makassar"
+     data-lokasi="Tamalanrea"
+     data-kt="1"
+     data-km="1"
+     data-lt=""
+     data-lb="45"
+     data-sertifikat="SHM"
+     data-transaksi="Dijual">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Apartemen Cozy">
                         <div class="badges">
@@ -310,59 +317,146 @@
     </main>
 
     <div id="filterModal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h2>Filter</h2>
-                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-row">
-                    <label>Transaksi</label>
-                    <select><option selected>Dijual</option><option>Disewa</option><option>Dijual/Disewa</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Tipe</label>
-                    <select><option>Pilih Tipe</option><option>Rumah</option><option>Apartemen</option><option>Villa</option><option>Tanah</option><option>Rumah Kost<option>Toko</option><option>Gudang</select>
-                </div>
-                <div class="form-row">
-                    <label>Sertifikat</label>
-                    <select><option>Pilih Sertifikat</option><option>SHM</option><option>HGB</option><option>Lain-lain</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Provinsi</label>
-                    <select><option>Pilih Provinsi</option><option>Sulawesi Selatan</option><option>Sulawesi Barat</option><option>Sulawesi Tengah</option><option>Sulawesi Utara</option><option>Sulawesi Tenggara</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Kota</label>
-                    <select><option>Pilih Kota</option><option>Makassar</option><option>Gowa</option><option>Maros</option><option>Bulukumba</option><option>Enrekang</option><option>Jeneponto</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Lokasi</label>
-                    <select><option>Pilih Lokasi</option><option>Tamalanrea</option><option>Panakkukang</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Kamar Tidur</label>
-                    <select><option>Pilih Kamar tidur</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Kamar Mandi</label>
-                    <select><option>Pilih Kamar Mandi</option><option>1+</option><option>2+</option><option>3+</option></select>
-                </div>
-                <div class="form-row">
-                    <label>Luas Tanah (m<sup>2</sup>)</label>
-                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
-                </div>
-                <div class="form-row">
-                    <label>Luas Bangunan (m<sup>2</sup>)</label>
-                    <div class="range-inputs"><input type="number" placeholder=""><span>s/d</span><input type="number" placeholder=""></div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-batal" onclick="closeModal()">Batal</button>
-                <button class="btn-cari" onclick="closeModal()">Cari</button>
-            </div>
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <h2>Filter</h2>
+            <button class="close-btn" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+
+        <div class="modal-body">
+
+            <!-- TRANSAKSI -->
+            <div class="form-row">
+                <label>Transaksi</label>
+
+                <select id="filterTransaksi">
+                    <option value="">Semua</option>
+                    <option value="Dijual">Dijual</option>
+                    <option value="Disewa">Disewa</option>
+                </select>
+            </div>
+
+            <!-- TIPE -->
+            <div class="form-row">
+                <label>Tipe</label>
+
+                <select id="filterTipe">
+                    <option value="">Semua Tipe</option>
+                    <option value="Rumah">Rumah</option>
+                    <option value="Apartemen">Apartemen</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Ruko">Ruko</option>
+                    <option value="Tanah">Tanah</option>
+                    <option value="Rumah Kost">Rumah Kost</option>
+                    <option value="Toko">Toko</option>
+                    <option value="Gudang">Gudang</option>
+                </select>
+            </div>
+
+            <!-- PROVINSI -->
+            <div class="form-row">
+                <label>Provinsi</label>
+
+                <select id="filterProvinsi">
+                    <option value="">Semua Provinsi</option>
+                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                    <option value="Sulawesi Barat">Sulawesi Barat</option>
+                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                    <option value="Sulawesi Utara">Sulawesi Utara</option>
+                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                </select>
+            </div>
+
+            <!-- KOTA -->
+            <div class="form-row">
+                <label>Kota</label>
+
+                <select id="filterKota">
+                    <option value="">Semua Kota</option>
+                    <option value="Makassar">Makassar</option>
+                    <option value="Gowa">Gowa</option>
+                    <option value="Maros">Maros</option>
+                    <option value="Bulukumba">Bulukumba</option>
+                    <option value="Enrekang">Enrekang</option>
+                    <option value="Jeneponto">Jeneponto</option>
+                </select>
+            </div>
+
+            <!-- LOKASI -->
+            <div class="form-row">
+                <label>Lokasi</label>
+
+                <select id="filterLokasi">
+                    <option value="">Semua Lokasi</option>
+                    <option value="Tamalanrea">Tamalanrea</option>
+                    <option value="Panakkukang">Panakkukang</option>
+                </select>
+            </div>
+
+            <!-- KAMAR TIDUR -->
+            <div class="form-row">
+                <label>Kamar Tidur</label>
+
+                <select id="filterKT">
+                    <option value="">Semua</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                </select>
+            </div>
+
+            <!-- KAMAR MANDI -->
+            <div class="form-row">
+                <label>Kamar Mandi</label>
+
+                <select id="filterKM">
+                    <option value="">Semua</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                </select>
+            </div>
+
+            <!-- LUAS TANAH -->
+            <div class="form-row">
+                <label>Luas Tanah (m²)</label>
+
+                <div class="range-inputs">
+                    <input type="number" id="ltMin" placeholder="Min">
+                    <span>s/d</span>
+                    <input type="number" id="ltMax" placeholder="Max">
+                </div>
+            </div>
+
+            <!-- LUAS BANGUNAN -->
+            <div class="form-row">
+                <label>Luas Bangunan (m²)</label>
+
+                <div class="range-inputs">
+                    <input type="number" id="lbMin" placeholder="Min">
+                    <span>s/d</span>
+                    <input type="number" id="lbMax" placeholder="Max">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn-batal" onclick="closeModal()">
+                Batal
+            </button>
+
+            <button class="btn-cari" onclick="applyFilter()">
+                Cari
+            </button>
+        </div>
+
     </div>
+</div>  
 <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col about-col">
@@ -553,6 +647,94 @@
     document.getElementById("tipeDropdown")
         .classList.remove("show");
 }   
+        function applyFilter() {
+
+    const tipe = document.getElementById("filterTipe").value;
+    const provinsi = document.getElementById("filterProvinsi").value;
+    const kota = document.getElementById("filterKota").value;
+    const lokasi = document.getElementById("filterLokasi").value;
+    const sertifikat = document.getElementById("filterSertifikat").value;
+    const transaksi = document.getElementById("filterTransaksi").value;
+
+    const kt = document.getElementById("filterKT").value;
+    const km = document.getElementById("filterKM").value;
+
+    const ltMin = document.getElementById("ltMin").value;
+    const ltMax = document.getElementById("ltMax").value;
+
+    const lbMin = document.getElementById("lbMin").value;
+    const lbMax = document.getElementById("lbMax").value;
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let show = true;
+
+        // TIPE
+        if(tipe && card.dataset.type !== tipe) {
+            show = false;
+        }
+
+        // PROVINSI
+        if(provinsi && card.dataset.provinsi !== provinsi) {
+            show = false;
+        }
+
+        // KOTA
+        if(kota && card.dataset.kota !== kota) {
+            show = false;
+        }
+
+        // LOKASI
+        if(lokasi && card.dataset.lokasi !== lokasi) {
+            show = false;
+        }
+
+        // TRANSAKSI
+        if(transaksi && card.dataset.transaksi !== transaksi) {
+            show = false;
+        }
+
+        // KAMAR TIDUR
+        if(kt && parseInt(card.dataset.kt) < parseInt(kt)) {
+            show = false;
+        }
+
+        // KAMAR MANDI
+        if(km && parseInt(card.dataset.km) < parseInt(km)) {
+            show = false;
+        }
+
+        // LUAS TANAH
+        if(ltMin && parseInt(card.dataset.lt) < parseInt(ltMin)) {
+            show = false;
+        }
+
+        if(ltMax && parseInt(card.dataset.lt) > parseInt(ltMax)) {
+            show = false;
+        }
+
+        // LUAS BANGUNAN
+        if(lbMin && parseInt(card.dataset.lb) < parseInt(lbMin)) {
+            show = false;
+        }
+
+        if(lbMax && parseInt(card.dataset.lb) > parseInt(lbMax)) {
+            show = false;
+        }
+
+        // TAMPIL / SEMBUNYI
+        if(show) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    closeModal();
+}
     </script>
 </body>
 </html>
